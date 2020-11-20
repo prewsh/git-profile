@@ -1,0 +1,161 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fa{
+    font-size: x-large;
+    color: #fff;
+}
+
+.container{
+    width: 100%;
+}
+
+/* navbar styling starts here  */
+ .navbar{
+    display: flex;
+    background-color: #24292e;
+    align-items: center;
+    padding: 16px;
+}
+
+.nav-bars{
+    background-color: transparent;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    padding: 3px 5px;
+    margin: 10px;
+    outline: none;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-profile-img{
+    display: flex;
+}
+
+.nav-profile-img img{
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.nav-part1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.logo{
+    margin-left: -80px;
+}
+
+.logo-mobile{
+    display: none;
+}
+
+.notification-icon2{
+    display: none;
+}
+
+.nav-part2{
+    display: flex;
+    align-items: center;
+}
+
+.nav-part2 > div {
+    margin-right: 16px;
+}
+
+.spacer{
+    display: flex;
+    flex: 1;
+}
+
+.nav-links{
+    display: flex;
+    list-style-type: none;
+    margin-left: -80px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #fff;
+    padding-left: 16px;
+}
+
+.search-form > input{
+    background-color: #24292e;
+    border: 1px solid #f7f7f7;
+    border-radius: 7%;
+    height: 25px;
+    width: 198px;
+}
+
+.search-form{
+    border: 2px solid #fff;
+    border-radius: 10%;
+    border: none;
+}
+/* navbar styling Ends here  */
+
+
+
+
+@media screen and (max-width: 767px){
+
+    .nav-bars{
+        display: block;
+        /* margin-left: -100px; */
+    }
+
+    .nav-links{
+        display: none;
+        width: 100%;
+    }
+
+    .nav-links.show{
+        display: block;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 1px;
+        font-size: 20px;
+        /* margin-top: 10px; */
+        /* flex-direction: row; */
+    }
+
+    .logo-mobile{
+        display: block;
+    }
+    
+    .notification-icon2{
+        display: block;
+    }
+
+    .nav-links.show, form, .nav-link{
+        padding: 10px;
+    }
+
+    .nav-part1{
+        /* flex-direction: row-reverse; */
+    }
+
+    .nav-profile-img{
+        display: none;
+    }
+
+    .notification-icon2{
+        margin-right: 30px;
+    }
+
+    .logo{
+        display: none;
+    }
+}
