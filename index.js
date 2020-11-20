@@ -9,7 +9,7 @@
 // -------------------------fetch Method 1---------------------------------
 
 const github_datas ={
-    "token": "f59b0ee122ee7f8d2e152ce87f51d387f9857682",
+    "token": "###",
     "username": "prewsh" 
 }
 
@@ -48,7 +48,7 @@ fetch ('https://api.github.com/graphql/', {
 // ---------------------------------Method 2 -------------------------------
 
 // const github_data ={
-//     "token": "f59b0ee122ee7f8d2e152ce87f51d387f9857682",
+//     "token": "###",
 //     "username": "prewsh" 
 // }
 
