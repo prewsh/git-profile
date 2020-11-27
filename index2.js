@@ -65,8 +65,6 @@ fetch("https://api.github.com/graphql", {
 
     let twitter = document.getElementById("twitter")
     twitter.innerText = ` ${res.data.viewer.twitterUsername}`
-
-    
     // console.log(res.data.followers[totalCount])
     console.log(res.data.viewer.bio)
     console.log(res.data.viewer.login)
@@ -81,7 +79,6 @@ fetch("https://api.github.com/graphql", {
         divv.className = "divv"
 
         let nameDiv = document.createElement("div")
-        nameDiv.className = "name-div"
 
         let repoName = document.createElement('h3')
         let repoNameLink = document.createElement('a')
