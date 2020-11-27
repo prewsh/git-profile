@@ -1,7 +1,23 @@
+/* utility styling starts  */
+
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-input-bg: #fff;
+    --color-text-primary: #24292e;
+    --color-text-secondary: #586069;
+    --color-input-border: #e1e4e8;
+    --color-shadow-inset: inset 0 1px 0 rgba(225,228,232,0.2);
+    --color-btn-primary-bg: #2ea44f;
+    --color-btn-primary-text: #fff;
+    --color-text-white: #fff
+    --color-header-search-border: #444d56
+    --color-input-border: #444d56
+    --color-header-search-bg: #24292e
 }
 
 .fa{
@@ -11,7 +27,30 @@
 
 .container{
     width: 100%;
+    /* padding-left: 20px;
+    padding-right: 20px; */
 }
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 5px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid;
+    border-radius: 6px;
+
+}
+
+/* utility styling ends here  */
+
+
+
 
 /* navbar styling starts here  */
  .navbar{
@@ -84,6 +123,11 @@
     margin-left: -80px;
 }
 
+.nav-link-1{
+    width: 100%;
+    text-align: center;
+}
+
 .nav-link{
     text-decoration: none;
     color: #fff;
@@ -92,18 +136,233 @@
 
 .search-form > input{
     background-color: #24292e;
-    border: 1px solid #f7f7f7;
+    /* border: 1px solid #f7f7f7; */
     border-radius: 7%;
-    height: 25px;
-    width: 198px;
+    /* height: 25px; */
+    /* width: 198px; */
+
+
+    display: table-cell;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: inherit;
+    color: #e1e4e8;
+    background: none;
+    border: 0;
+    box-shadow: none;
+
+
+    border-radius: 6px;
+    outline: none;
+    vertical-align: middle;
+    padding: 5px 12px;
 }
 
 .search-form{
     border: 2px solid #fff;
-    border-radius: 10%;
-    border: none;
+    /* border-radius: 10%; */
+    /* border: none; */
+
+
+    display: table;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    font-size: inherit;
+    font-weight: 400;
+    color: var(--color-text-white);
+    vertical-align: middle;
+    background-color: var(--color-header-search-bg);
+    border: 2px solid var(--color-header-search-border);
+    box-shadow: none;
 }
 /* navbar styling Ends here  */
+
+
+/* body styling starts here  */
+
+.body{
+    width: 100%;
+    height: 100%;
+}
+
+.tab{
+    padding: 10px 0px;
+    border-bottom: 1px solid #24292e;
+}
+
+.tab ul{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.tab ul li{
+    list-style-type: none;
+    outline-style: none;
+    
+}
+
+.tab ul li a{
+    text-decoration: none;
+    /* margin-right: 40px;
+    color: #000000; */
+
+
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 30px;
+    color: var(--color-underlinenav-text);
+    text-align: center;
+    white-space: nowrap;
+    background-color: initial;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color .36s ease-in;
+}
+
+.sidebar{
+    width: 25%;
+    margin-right: 16px;
+    margin-left: 16px;
+}
+
+#profile-img  img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+
+.profile-name h1 {
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.profile-name h3{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: var(--color-text-secondary)
+}
+
+.edit-btn{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.followers{
+    display: flex;
+    padding: 12px 0px;
+}
+
+.followerss{
+    margin-right: 12px;
+}
+
+#web, #twitter{
+    margin: 10px 0px;
+}
+
+#profile-name1, #profile-name2{
+    margin: 10px 0px;
+}
+
+.repo-body{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-wrap: wrap;
+
+    max-width: 90%;
+    margin: 0px auto;
+}
+
+
+
+.repos{
+    margin: 10px auto;
+    /* width: 60% */
+}
+
+.repo-name a{
+    text-decoration: none;
+}
+
+.search-repo{
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-text-primary);
+    vertical-align: middle;
+    background-color: var(--color-input-bg);
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid var(--color-input-border);
+    border-radius: 6px;
+    outline: none;
+    box-shadow: var(--color-shadow-inset);
+    width: 100%;
+    margin-right: 5px;
+}
+
+.search-repo1, .search-repo2{
+    width: 40%;
+}
+
+.filters{
+    min-width: 100%;
+    display: flex;
+}
+
+.new-repo-btn{
+    color: var(--color-btn-primary-text);
+    background-color: var(--color-btn-primary-bg);
+    border-color: var(--color-btn-primary-border);
+    box-shadow: var(--color-btn-primary-shadow),var(--color-btn-primary-inset-shadow);
+}
+
+
+.single-repo{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 12px;
+    /* align-items: center; */
+    padding: 1px;
+}
+
+.divv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid gray;
+    border-top: 0px solid grey;
+}
+
+.divv:nth-child(1){
+    border-top: 1px solid grey;
+}
+
+.name-div{
+    width: 70%;
+    padding: 7px;
+    margin-top: 7px;
+
+}
+
+
+
+/* body styling ends here  */
 
 
 

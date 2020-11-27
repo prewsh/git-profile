@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <title>Mr Prewsh</title>
+    <link rel="shortcut icon" href="./assest/favicon.ico" type="image/x-icon">
+    <title>Your Repositories</title>
 </head>
 <body>
     <main class="container">
@@ -20,7 +21,7 @@
                         <input type="text" placeholder="Search or Jump to..." >
                     </form>
 
-                   <li> <a href="" class="nav-link">Pull Requests</a> </li>
+                   <li class="nav-link-1"> <a href="" class="nav-link">Pull Requests</a> </li>
                    <li> <a href="" class="nav-link">Issues</a> </li>
                    <li> <a href="" class="nav-link">MarketPlace</a> </li>
                    <li> <a href="" class="nav-link">Explore</a> </li>
@@ -35,16 +36,80 @@
                    </div>
                                
             </div>
-            <!-- <div class="notification-icon2"><i class="fa fa-bell"></i></div> -->
-            <!-- <div class="spacer"></div> -->
-            <!-- <div class="nav-part2">
-                   
-                   
-            </div> -->
         </nav>
+
+
+        <section class="body">
+
+            <div class="tab">
+                <ul>
+                    <li><a href="">Overview</a></li>
+                    <li><a href="">Repositories</a></li>
+                    <li><a href="">Projects</a></li>
+                    <li><a href="">Packages</a></li>
+                </ul>
+            </div>
+
+            <div class="repo-body">
+
+                <div class="sidebar">
+                    <div id="profile-img"></div>
+                    <div class="profile-name">
+                        <h1 id="profile-name1"></h1>
+                        <h3 id="profile-name2"></h3>
+                    </div>
+                    
+                    <p class="bio" id="bio"></p>
+                    <button class="btn edit-btn">Edit Profile</button>
+                    <div class="followers"><p id="followers" class="followerss"></p> <p id="following"></p></div>
+                    <div class="others"> <p id="web"></p> <p id="twitter"></p></div>
+                </div>
+
+
+                <!-- repos styling  -->
+                <div class="repos">
+
+                    <div class="filters">
+                    
+                        <input class="search-repo" type="text" placeholder="find a repository">
+
+                        <select name="" id="" class="search-repo search-repo1">
+                            <option value="like me">like me</option>
+                            <option value="hate me">hate me</option>
+                        </select>
+
+                        <select name="" id="" class="search-repo search-repo2">
+                            <option value="lik me">like me</option>
+                            <option value="hat me">hate me</option>
+                        </select>
+
+                        <button class="new-repo-btn btn">New</button>
+
+                    </div>
+
+                    <div class="single-repo">
+                        <!-- <div id="">
+                            <h2 class="h1-repo-name"> <a href="" id="repo-name">github</a> </h2>
+                            <p class="description" id="repo-description">forked from nowhere</p>
+                            <div class="star-btn ">
+                                <button class="btn">star</button>
+                            </div>
+                            <div class="repo-details">  </div>
+                        </div> -->
+
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
 
     </main>
 
-    <script src="./index.js"></script>
+    <script src="./index2.js"></script>
 </body>
 </html>
