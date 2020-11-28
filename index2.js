@@ -1,19 +1,46 @@
-// require('dotenv').config()
 const hamburger = document.getElementById('nav-bars')
 const navUL = document.getElementById('nav-links')
 
 hamburger.addEventListener("click", ()=>{
     navUL.classList.toggle('show');
-    console.log("i am clicked")
 })
 
-// console.log(process.env)
 
-// process.env.API_KEY 
-
-fetch("https://gentle-journey-31506.herokuapp.com/graphql")
+fetch("https://api.github.com/graphql", {
+    method: "POST",
+    headers: {
+        "Content-Type" : "application/json",
+        "Authorization" : "Bearer 93c971033a0ea0374c26891f93ea93ad3eb384b6"
+    },
+    body: JSON.stringify({
+        query: `
+        query { 
+            viewer {
+                login
+                bio
+                email
+                avatarUrl
+                following {
+                    totalCount
+                  }
+                followers {
+                    totalCount
+                  }
+                name
+                websiteUrl
+                twitterUsername
+                repositories(orderBy: {field: CREATED_AT, direction: DESC}, first: 20) {
+                  nodes {
+                    name
+                    description
+                  }
+                }
+              }
+          }
+        `
+    })
+})
 .then(res => res.json().then(res => {
-    console.log(res)
 
     // display profile pic
     let profilePic = document.createElement('img')
@@ -43,15 +70,9 @@ fetch("https://gentle-journey-31506.herokuapp.com/graphql")
     twitter.href = "https://twitter.com/MrPrewsh"
     twitter.innerText = ` @${res.data.viewer.twitterUsername}`
 
-    // console.log(res.data.followers[totalCount])
-    console.log(res.data.viewer.bio)
-    console.log(res.data.viewer.login)
-    console.log(res.data.viewer.followers.totalCount)
-
-    console.log(res.data.viewer.bio)
     
-    console.log(res.data.viewer.repositories.nodes.forEach(node =>{
-        console.log(node.name)
+    res.data.viewer.repositories.nodes.forEach(node =>{
+        
 
         let divv = document.createElement("div")
         divv.className = "divv"
@@ -88,7 +109,7 @@ fetch("https://gentle-journey-31506.herokuapp.com/graphql")
 
 
         
-    }))
+    })
 }))
 
 
