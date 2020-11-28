@@ -10,7 +10,7 @@ fetch("https://api.github.com/graphql", {
     method: "POST",
     headers: {
         "Content-Type" : "application/json",
-        "Authorization" : "Bearer 93c971033a0ea0374c26891f93ea93ad3eb384b6"
+        "Authorization" : "Bearer e5a1253164d0865b119ad92373c44369800ff3e2"
     },
     body: JSON.stringify({
         query: `
@@ -41,6 +41,7 @@ fetch("https://api.github.com/graphql", {
     })
 })
 .then(res => res.json().then(res => {
+
 
     // display profile pic
     let profilePic = document.createElement('img')
