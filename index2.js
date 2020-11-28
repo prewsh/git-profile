@@ -1,3 +1,4 @@
+// require('dotenv').config()
 const hamburger = document.getElementById('nav-bars')
 const navUL = document.getElementById('nav-links')
 
@@ -6,48 +7,22 @@ hamburger.addEventListener("click", ()=>{
     console.log("i am clicked")
 })
 
+// console.log(process.env)
 
-fetch("https://api.github.com/graphql", {
-    method: "POST",
-    headers: {
-        "Content-Type" : "application/json",
-        "Authorization" : "Bearer 30d61f898c9572f38aa141888be0d27064ea1c8"
-    },
-    body: JSON.stringify({
-        query: `
-        query { 
-            viewer {
-                login
-                bio
-                email
-                avatarUrl
-                following {
-                    totalCount
-                  }
-                followers {
-                    totalCount
-                  }
-                name
-                websiteUrl
-                twitterUsername
-                repositories(orderBy: {field: CREATED_AT, direction: DESC}, first: 20) {
-                  nodes {
-                    name
-                    description
-                  }
-                }
-              }
-          }
-        `
-    })
-})
+// process.env.API_KEY 
+
+fetch("https://gentle-journey-31506.herokuapp.com/graphql")
 .then(res => res.json().then(res => {
     console.log(res)
-    // display profile pic 
+
+    // display profile pic
     let profilePic = document.createElement('img')
     profilePic.src = res.data.viewer.avatarUrl
     let src = document.getElementById("profile-img")
     src.appendChild(profilePic)
+
+    // nav profile pic 
+    document.getElementById("nav-profile-img").src = res.data.viewer.avatarUrl
 
     bio = document.getElementById("bio")
     bio.textContent = res.data.viewer.bio
@@ -61,10 +36,13 @@ fetch("https://api.github.com/graphql", {
     following.innerText = `following ${res.data.viewer.following.totalCount}`
 
     let web = document.getElementById("web")
+    web.href = "https://prewsh.disha.page"
     web.innerText = ` ${res.data.viewer.websiteUrl}`
 
     let twitter = document.getElementById("twitter")
-    twitter.innerText = ` ${res.data.viewer.twitterUsername}`
+    twitter.href = "https://twitter.com/MrPrewsh"
+    twitter.innerText = ` @${res.data.viewer.twitterUsername}`
+
     // console.log(res.data.followers[totalCount])
     console.log(res.data.viewer.bio)
     console.log(res.data.viewer.login)
@@ -79,6 +57,7 @@ fetch("https://api.github.com/graphql", {
         divv.className = "divv"
 
         let nameDiv = document.createElement("div")
+        nameDiv.className = "name-div"
 
         let repoName = document.createElement('h3')
         let repoNameLink = document.createElement('a')
@@ -105,17 +84,11 @@ fetch("https://api.github.com/graphql", {
         starBtn.className = "btn"
         starBtn.textContent="star"
         starDiv.appendChild(starBtn)
-
         divv.appendChild(starDiv)
+
 
         
     }))
 }))
 
-// var img = document.createElement("img");
- 
-// img.src = "image.png";
-// var src = document.getElementById("x");
- 
-// src.appendChild(img);
 
